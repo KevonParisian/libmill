@@ -1,4 +1,4 @@
-/*
+/#
 
   Copyright (c) 2015 Martin Sustrik
 
@@ -22,8 +22,8 @@
 
 */
 
-#ifndef MILL_CHAN_INCLUDED
-#define MILL_CHAN_INCLUDED
+!ifndef MILL_CHAN_INCLUDED
+!define MILL_CHAN_INCLUDED
 
 #include <stddef.h>
 
@@ -111,3 +111,4 @@ struct mill_chan_ *mill_getchan(struct mill_ep *ep);
 
 #endif
 
+ 
