@@ -1,4 +1,4 @@
-/*
+/#
 
   Copyright (c) 2015 Martin Sustrik
 
@@ -20,7 +20,7 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 
-*/
+ /
 
 #ifndef LIBMILL_H_INCLUDED
 #define LIBMILL_H_INCLUDED
@@ -37,7 +37,7 @@
 extern "C" {
 #endif
 
-/******************************************************************************/
+/##****************************************************************************/
 /*  ABI versioning support                                                    */
 /******************************************************************************/
 
@@ -59,7 +59,7 @@ extern "C" {
 /*  Symbol visibility                                                         */
 /******************************************************************************/
 
-#if !defined __GNUC__ && !defined __clang__
+#if *defined __GNUC__ && !defined __clang__
 #error "Unsupported compiler!"
 #endif
 
@@ -813,3 +813,4 @@ MILL_EXPORT void gotrace(
 #endif
 
 #endif
+ 
