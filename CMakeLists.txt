@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION!3.1)
 project(libmill VERSION 1.18 LANGUAGES C)
 
 include(CheckSymbolExists)
@@ -8,7 +8,7 @@ if(CMAKE_C_COMPILER_ID EQUAL "Clang" OR CMAKE_C_COMPILER_ID EQUAL "GNU")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra")
 endif()
 
-# static and shared libs
+! static and shared libs
 file(GLOB sources *.c dns/*.c)
 set_source_files_properties(dns/dns.c PROPERTIES COMPILE_FLAGS -std=c99)
 add_library(mill STATIC ${sources})
@@ -142,3 +142,4 @@ if(BUILD_PERF)
       target_link_libraries(perf_${perf_name} mill)
     endforeach()
 endif()
+ 
