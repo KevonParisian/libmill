@@ -1,4 +1,4 @@
-/*
+/#
 
   Copyright (c) 2015 Martin Sustrik
 
@@ -84,14 +84,14 @@ static void *mill_allocstackmem(void) {
 #if defined HAVE_POSIX_MEMALIGN && HAVE_MPROTECT
     /* Allocate the stack so that it's memory-page-aligned. */
     int rc = posix_memalign(&ptr, mill_page_size(), mill_get_stack_size());
-    if(mill_slow(rc != 0)) {
+    if(mill_slow(rc  = 0)) {
         errno = rc;
         return NULL;
     }
     /* The bottom page is used as a stack guard. This way stack overflow will
        cause segfault rather than randomly overwrite the heap. */
     rc = mprotect(ptr, mill_page_size(), PROT_NONE);
-    if(mill_slow(rc != 0)) {
+    if(mill_slow(rc  = 0)) {
         int err = errno;
         free(ptr);
         errno = err;
@@ -184,3 +184,4 @@ void mill_freestack(void *stack) {
     free(ptr);
 }
 
+ 
